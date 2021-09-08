@@ -1,0 +1,59 @@
+<h1>Lista Aninhada</h1>
+<ul class="tree">
+    <li class="folder">backend
+        <ul>
+            <li class="folder">app
+                <ul>
+                    <li class="collapsed">produto.js</li>
+                    <li class="collapsed">usuario.js</li>
+                    <li class="collapsed">venda.js</li>
+                </ul>
+            </li>
+            <li class="folder">config
+                <ul>
+                    <li class="collapsed">banco.js</li>
+                    <li class="collapsed">rotas.js</li>
+                    <li class="collapsed">servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="folder">frontend
+        <ul>
+            <li class="folder">public
+                <ul>
+                    <li class="collapsed">app.css</li>
+                    <li class="collapsed">app.js</li>
+                    <li class="collapsed">index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    let allColliders = document.getElementsByClassName('collapsed')
+    let allFolders = document.getElementsByClassName('folder')
+        for(var i = 0; i < allColliders.length; i++) {
+            allColliders[i].onclick = function() {
+                if(this.parentNode){
+                    var childList = this.parentNode.getElementsByTagName('LI');
+                    for(var y = 0; y < childList.length;y++)
+                    {
+                        console.log(childList[y])
+                        var currentState = childList[y].style.display;
+                        if(currentState=="none")
+                        {
+                            childList[y].style.display="block";
+                        }
+                        else
+                        {
+                            childList[y].style.display="none";
+                        }
+                    }
+                }
+            }
+        }
+</script>
